@@ -18,7 +18,7 @@ export const queries = [
             JOIN research_papers rp
                 USING(paper_id)
             GROUP BY  gender
-            HAVING gender = "M";`,
+            HAVING gender = "F";`,
   },
   {
     title: `3- Average of the h-index of all authors per university.`,
