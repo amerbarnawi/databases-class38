@@ -1,0 +1,63 @@
+1-What columns violate 1NF?
+
+The answer:
+The rule: All data must be atomic (every column should only contain a single value):
+- food_code and member_address columns violate this rule.
+
+The rule: Prevent duplicate records (by applying primary keys):
+- There is no primary keys, the values are repeated.
+
+The rule: Attribute domain should not change (all values in a column must be of the same kind or type).
+- dinner_date column data are not the same type.
+
+===============================================================
+
+2- What entities do you recognize that could be extracted?
+
+The entities are: (members-data), (dinner-data), (venue-data), (food-data).
+
+===============================================================
+
+3- Name all the tables and columns that would make a 3NF compliant solution.
+
+Members table:
++------------+---------------+----------------+-----------+
+| member_id  |  member_name  | member_address | dinner_id |
++------------+---------------+----------------+-----------+
+| PRIMARY K  |  VARCHAR      |   foreign K    | foreign K |
++------------+---------------+----------------+-----------+
+
+Member address table:
++-----------------+---------------+--------------+
+| member_address  | house_number  | street_name  |
++-----------------+---------------+--------------+
+| PRIMARY KEY     |  INT-VARCHAR  | VARCHAR      |
++-----------------+---------------+--------------+
+
+Venue table:
++------------+-------------------+
+| venue_code | venue_description |
++------------+-------------------+
+| PRIMARY K  |       TEXT        |
++------------+-------------------+
+
+Dinner table:
++------------+-------------+-----------+
+| dinner_id  | dinner_date | venue_code|
++------------+-------------+-----------+
+| PRIMARY K  |    DATE     | foreign K |
++------------+-------------+-----------+
+
+Food table:
++------------+------------------+
+| food_code  | food_description |
++------------+------------------+
+| PRIMARY K  |       TEXT       |
++------------+------------------+
+
+The relationship table between ( dinner ) and ( food ) entities:( many to many relationship ):
++-----+------------+-----------+
+| id  | dinner_id  | food_code |
++- ---+------------+-----------+
+| PK  | foreign K  | foreign K |
++- ---+------------+-----------+
