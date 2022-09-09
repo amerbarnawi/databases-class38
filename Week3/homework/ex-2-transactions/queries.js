@@ -46,12 +46,4 @@ export const transactionQueries = [
     query: `INSERT INTO account_changes (account_number, amount, changed_date, remark)
             VALUES (102, 1000, "2022-09-05", "Receiving the course cost.");`,
   },
-  {
-    title: "Showing the changes in account_changes table:",
-    query: `SELECT * FROM account_changes;`,
-  },
-  {
-    title: " Showing the account table:",
-    query: `SELECT * FROM account;`,
-  },
 ];
