@@ -65,7 +65,7 @@ export async function isTransferringValid(transferInfo) {
     return false;
   }
 
-  // Checking if the accounts is available and the sender balance is enough:
+  // Checking if the accounts are available and the sender balance is enough:
   const isBalanceEnough = await isSenderBalanceEnough(
     acCollection,
     fromAccount,
@@ -87,7 +87,7 @@ export async function isTransferringValid(transferInfo) {
   return true;
 }
 
-// Finding the changes number:
+// Getting the changes number:
 export async function getAccountChangeNumber(acCollection, accountNumber) {
   const accountResult = await acCollection.findOne({
     account_number: accountNumber,
@@ -104,7 +104,7 @@ export async function getAccountChangeNumber(acCollection, accountNumber) {
   }
 }
 
-// Checking if the sender and recipient account is founded:
+// Checking if the sender and recipient account are available:
 export async function isAccountFound(acCollection, accountNumber) {
   const result = await acCollection.findOne({ account_number: accountNumber });
 
