@@ -2,9 +2,9 @@ export const createTables = [
   {
     title: "Creating the account table:",
     query: `CREATE TABLE IF NOT EXISTS account (
-                account_number INT NOT NULL PRIMARY KEY,
-                balance REAL
-                );`,
+            account_number INT NOT NULL PRIMARY KEY,
+            balance REAL
+            );`,
   },
   {
     title: "Creating the account_changes table:",
